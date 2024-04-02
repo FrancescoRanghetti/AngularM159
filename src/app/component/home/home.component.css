@@ -1,0 +1,30 @@
+.containerChoice {
+  height: calc(100vh - 82px - 82px);
+}
+
+.btnVote, .btnProponi, .btnRisultati {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 15px 15px;
+  width: 400px;
+  color: white;
+  position: relative;
+  top: 35vh;
+  transition: 0.2s;
+}
+
+.btnVote {
+  margin-bottom: 30px;
+}
+
+.btnProponi {
+  margin-bottom: 30px;
+}
+
+.btnVote:hover, .btnProponi:hover, .btnRisultati:hover {
+  padding: 25px 30px;
+  transition: 0.2s;
+  background-color: white;
+  color: #1C1D25;
+
+}

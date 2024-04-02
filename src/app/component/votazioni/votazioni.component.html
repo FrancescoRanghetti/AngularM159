@@ -1,0 +1,10 @@
+<div class="containerVotazioni">
+  <div class="votazione" *ngFor="let votazione of votazioniArray">
+    <div class="nome">
+      {{votazione.nome}}
+    </div>
+    <div class="button">
+      <a [routerLink]="['/votazioni/', votazione.id]" class="btnVota">Vota</a>
+    </div>
+  </div>
+</div>

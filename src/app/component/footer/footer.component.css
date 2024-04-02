@@ -1,0 +1,27 @@
+.containerFooter {
+  margin: 0;
+  width: 100%;
+  height: 82px;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+}
+
+.lineTop {
+  margin: 0 5% 0 5%;
+  border-top: solid white 2px;
+}
+
+.authors {
+  flex: 2;
+  text-align: right;
+  margin-right: 8%;
+}

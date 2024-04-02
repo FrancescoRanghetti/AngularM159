@@ -1,0 +1,21 @@
+.votazione {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+}
+
+.nome {
+  flex: 2;
+  text-align: left;
+  padding-left: 18%;
+}
+
+.button {
+  flex: 2;
+  padding-right: 5%;
+}
+
+.btnVota {
+  border: 2px solid white;
+  padding: 10px 50px;
+}
