@@ -1,27 +1,13 @@
-# AngularM159
+fai il git di questo progetto di angular (frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+fai il git del backend - git@github.com:FrancescoRanghetti/SpringBootM159.git
 
-## Development server
+esegui il file sqlScript.sql nelle resourses nel progetto spring boot
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+sempre nelle resources -> application properties cambia il tuo username e password di sql per poter collegarti al database da java
 
-## Code scaffolding
+prima di avviare il server backend assicurati di aver java 21 installato per eseguire il progetto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+avvia il server spring boot (facendo tasto destro -> run nel file SpringBootM159Application) e il frontend (facendo da terminale nel tuo ide nella cartella del progetto ng serve)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+accedi alla pagina http://localhost:4200 e verifica che funzioni tutto
