@@ -1,0 +1,29 @@
+<div class="containerVotazione" *ngFor="let votazione of votazioniArray">
+  <div class="nomeBody">
+    <div class="labelNome">
+      Nome:
+    </div>
+    <div class="nome">
+      {{votazione.nome}}
+    </div>
+  </div>
+  <div class="descrizioneBody">
+    <div class="labelDescrizione">
+      Descrizione
+    </div>
+    <div class="descrizione">
+      {{votazione.descrizione}}
+    </div>
+  </div>
+  <div class="autoreBody">
+    <p class="autore">---Autore: {{votazione.autore}}---</p>
+  </div>
+  <div class="btnVotiBody">
+    <div class="si">
+      <a>Si</a>
+    </div>
+    <div class="no">
+      <a>No</a>
+    </div>
+  </div>
+</div>

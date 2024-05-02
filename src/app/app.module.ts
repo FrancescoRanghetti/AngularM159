@@ -13,9 +13,11 @@ import {VotazioniComponent} from './component/votazioni/votazioni.component';
 import {LoginPageComponent} from './page/login-page/login-page.component';
 import {HomePageComponent} from './page/home-page/home-page.component';
 import {VotazioniPageComponent} from './page/votazioni-page/votazioni-page.component';
-import { VotazionePageComponent } from './page/votazione-page/votazione-page.component';
-import { VotazioneComponent } from './component/votazione/votazione.component';
-import { VotazioneAdminComponent } from './component/votazione-admin/votazione-admin.component';
+import {VotazionePageComponent} from './page/votazione-page/votazione-page.component';
+import {VotazioneComponent} from './component/votazione/votazione.component';
+import {VotazioneAdminComponent} from './component/votazione-admin/votazione-admin.component';
+import {VotazioneAdminPageComponent} from './page/admin/votazione-admin-page/votazione-admin-page.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { VotazioneAdminComponent } from './component/votazione-admin/votazione-a
     VotazioniPageComponent,
     VotazionePageComponent,
     VotazioneComponent,
-    VotazioneAdminComponent
+    VotazioneAdminComponent,
+    VotazioneAdminPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterOutlet,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

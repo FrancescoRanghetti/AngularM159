@@ -2,14 +2,14 @@
   <div class="ourLogo">
     <p>nostra immagine del logo</p>
   </div>
-  <div class="changeTheme" [ngClass]="ifLogin">
+  <div class="changeTheme" [className]="ifLogin">
     <label class="switch">
       <input checked type="checkbox" class="toggle">
       <span class="slider"></span>
       <span class="card-side"></span>
     </label>
   </div>
-  <div class="out"><a [routerLink]="['/login']" class="logout" [ngClass]="ifLoginOut">🏃🏼</a>
+  <div class="out"><a *ngIf="!ifLogin" [routerLink]="['/login']" class="logout">🏃🏼</a>
   </div>
 </div>
 <div class="lineBottom"></div>

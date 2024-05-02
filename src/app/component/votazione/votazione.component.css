@@ -1,0 +1,74 @@
+.containerVotazione {
+  text-align: left;
+  font-size: 13pt;
+}
+
+.nomeBody, .descrizioneBody {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 20%;
+  margin-right: 40%;
+}
+
+.nomeBody {
+  margin-top: 15vh;
+}
+
+.labelNome {
+  flex: 2;
+  position: relative;
+  /*margin-left: 15%;*/
+}
+
+.nome {
+  flex: 3;
+  text-align: left;
+}
+
+.descrizioneBody {
+  margin-top: 5vh;
+}
+
+.labelDescrizione {
+  position: relative;
+  flex: 2;
+}
+
+.descrizione {
+  flex: 3;
+}
+
+.autore {
+  text-align: end;
+  padding-right: 15%;
+  margin-top: 5vh;
+  color: #525252;
+  font-size: 11pt;
+}
+
+.btnVotiBody {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10vh;
+}
+
+.si {
+  flex: 2;
+  text-align: right;
+  position: relative;
+  padding-right: 10%;
+}
+
+.no {
+  flex: 2;
+  text-align: left;
+  position: relative;
+  padding-left: 10%;
+}
+
+a {
+  border-radius: 0;
+  border: 1px solid white;
+  padding: 10px 45px;
+}

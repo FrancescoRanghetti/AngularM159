@@ -14,4 +14,12 @@ export class VotazioniService {
   getAllVotazioni(): Observable<Votazioni[]> {
     return this.http.get<Votazioni[]>('http://localhost:3200/votazioni');
   }
+
+  getVotazioneById(id: number): Observable<Votazioni[]> {
+    return this.http.get<Votazioni[]>(`http://localhost:3200/votazioneById/${id}`);
+  }
+
+  deleteNow(id: number) {
+    return this.http.get(`http://localhost:3200/votazioni-delete-now/${id}`);
+  }
 }
