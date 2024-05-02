@@ -1,0 +1,10 @@
+Response {
+"bar1Color": "red",
+"bar2Color": "blue"
+}
+
+.bar{
+  background-color: darkblue;
+  height: 20vw;
+
+}
