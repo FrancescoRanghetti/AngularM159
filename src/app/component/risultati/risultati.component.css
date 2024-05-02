@@ -2,3 +2,9 @@ Response {
 "bar1Color": "red",
 "bar2Color": "blue"
 }
+
+.bar{
+  background-color: grey;
+  height: 20vw;
+
+}
