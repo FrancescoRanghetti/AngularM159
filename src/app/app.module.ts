@@ -16,6 +16,10 @@ import {VotazioniPageComponent} from './page/votazioni-page/votazioni-page.compo
 import { VotazionePageComponent } from './page/votazione-page/votazione-page.component';
 import { VotazioneComponent } from './component/votazione/votazione.component';
 import { VotazioneAdminComponent } from './component/votazione-admin/votazione-admin.component';
+import { ProposteComponent } from './component/proposte/proposte.component';
+import { RisultatiComponent } from './component/risultati/risultati.component';
+import { PropostePageComponent } from './page/proposte-page/proposte-page.component';
+import { RisultatiPageComponent } from './page/risultati-page/risultati-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { VotazioneAdminComponent } from './component/votazione-admin/votazione-a
     VotazioniPageComponent,
     VotazionePageComponent,
     VotazioneComponent,
-    VotazioneAdminComponent
+    VotazioneAdminComponent,
+    ProposteComponent,
+    RisultatiComponent,
+    PropostePageComponent,
+    RisultatiPageComponent
   ],
   imports: [
     BrowserModule,
