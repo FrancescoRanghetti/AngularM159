@@ -1,21 +1,15 @@
-.votazione {
-  display: flex;
-  flex-direction: row;
-  margin-top: 70px;
+table {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Ensures borders between cells are merged */
 }
-
-.nome {
-  flex: 2;
-  text-align: left;
-  padding-left: 18%;
+td {
+  padding: 8px;  /*Padding around text and buttons */
+  vertical-align: top; /* Aligns content to the top of the cell */
 }
-
-.button {
-  flex: 2;
-  padding-right: 5%;
+.text-cell {
+  width: 50%; /* Allocates 70% of the width to the text */
 }
-
-.btnVota {
-  border: 2px solid white;
-  padding: 10px 50px;
+.button-cell {
+  width: 30%; /* Allocates 30% of the width to the button */
+  text-align: left; /* Aligns the button to the right side of its cell */
 }
