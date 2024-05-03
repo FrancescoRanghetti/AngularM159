@@ -4,10 +4,6 @@
   margin-top: 70px;
 }
 
-.votazione:last-child {
-  padding-bottom: 150px;
-}
-
 .nome {
   flex: 2;
   text-align: left;
