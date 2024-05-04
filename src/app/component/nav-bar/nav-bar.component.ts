@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -9,20 +9,22 @@ import {Router} from "@angular/router";
 })
 export class NavBarComponent implements OnInit {
   currentPage: string = '';
-  ifLogin: string = 'ifLoginTrue';
-  ifLoginOut: string = 'ifLoginOutTrue'
+  ifLogin: boolean = false;
+  protected href: string = "";
 
-  constructor(private router: Router) {
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
+
   ngOnInit() {
-    // @ts-ignore
-    // this.router.events.subscribe((event: RouterEvent) => {
-    //   if (event instanceof NavigationEnd) {
-    //     this.currentPage = event.urlAfterRedirects;
-    //     this.updateNavbarStyles(); // Call the function to update styles
-    //   }
-    // });
+    this.href = this.router.url;
+    console.log(this.router.url);
+    if (this.href.includes('/login')) {
+      this.ifLogin = true;
+    } else {
+
+    }
   }
 
   // updateNavbarStyles() {

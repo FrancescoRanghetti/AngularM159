@@ -2,18 +2,18 @@
   <h1 class="title">nome app</h1>
   <form method="post">
     <div class="name">
-      <label class="nameLabel">
+      <label class="nameLabel" *ngIf="!username">
         Name
       </label>
-      <input class="nameInput" type="text"/>
+      <input class="nameInput" type="text" [(ngModel)]="username" name="username"/>
     </div>
     <br/>
     <div class="password">
-      <label class="passwordLabel">
+      <label class="passwordLabel" *ngIf="!password">
         Password</label>
-      <input type="password" class="passwordInput"/>
+      <input type="password" class="passwordInput" [(ngModel)]="password" name="password"/>
     </div>
     <br/>
-    <a [routerLink]="['/']"><input type="submit" class="btnSubmit"/></a>
+    <a (click)="checkLogin()"><input type="submit" class="btnSubmit"/></a>
   </form>
 </div>

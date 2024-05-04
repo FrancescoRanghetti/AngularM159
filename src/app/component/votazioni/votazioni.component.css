@@ -1,15 +1,21 @@
-table {
-  width: 100%; /* Full width of the container */
-  border-collapse: collapse; /* Ensures borders between cells are merged */
+.votazione {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
 }
-td {
-  padding: 8px;  /*Padding around text and buttons */
-  vertical-align: top; /* Aligns content to the top of the cell */
+
+.nome {
+  flex: 2;
+  text-align: left;
+  padding-left: 18%;
 }
-.text-cell {
-  width: 50%; /* Allocates 70% of the width to the text */
+
+.button {
+  flex: 2;
+  padding-right: 5%;
 }
-.button-cell {
-  width: 30%; /* Allocates 30% of the width to the button */
-  text-align: left; /* Aligns the button to the right side of its cell */
+
+.btnVota {
+  border: 2px solid white;
+  padding: 10px 50px;
 }
