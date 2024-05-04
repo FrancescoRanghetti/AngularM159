@@ -1,10 +1,15 @@
-Response {
-"bar1Color": "red",
-"bar2Color": "blue"
+table {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Ensures borders between cells are merged */
 }
-
-.bar{
-  background-color: darkblue;
-  height: 20vw;
-
+td {
+  padding: 8px;  /*Padding around text and buttons */
+  vertical-align: top; /* Aligns content to the top of the cell */
+}
+.text-cell {
+  width: 50%; /* Allocates 70% of the width to the text */
+}
+.button-cell {
+  width: 30%; /* Allocates 30% of the width to the button */
+  text-align: left; /* Aligns the button to the right side of its cell */
 }
