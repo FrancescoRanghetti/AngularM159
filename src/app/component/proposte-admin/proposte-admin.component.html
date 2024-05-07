@@ -1,17 +1,9 @@
-<table>
-  <tr>
-    <td class="text-cell">proposta uno</td>
-    <td class="button-cell"> <button type="button">accetta</button> </td>
-    <td class="button-cell"><button type="button">rifiuta</button></td>
-  </tr>
-  <tr>
-    <td class="text-cell">proposta due</td>
-    <td class="button-cell"><button type="button">accetta</button></td>
-    <td class="button-cell"><button type="button">rifiuta</button></td>
-  </tr>
-  <tr>
-    <td class="text-cell">proposta tre</td>
-    <td class="button-cell"><button type="button">accetta</button></td>
-    <td class="button-cell"><button type="button">rifiuta</button></td>
-  </tr>
-</table>
+<div class="containerVotazioni">
+  <div *ngFor="let proposta of proposteArray" class="proposta">
+      <div class="nome">
+        {{proposta.nome}}
+      </div>
+      <div class="button"> <button type="button">accetta</button> </div>
+      <div class="button"><button type="button">rifiuta</button></div>
+  </div>
+</div>

@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class ProposteComponent implements OnInit {
   protected nome: string = '';
   protected descrizione: string = '';
-  protected autore: string = '';
+  protected autore: string = this.jwtService.getTokenSub();
   constructor(private jwtService: JwtService, private router: Router) {
 
   }
@@ -31,6 +31,6 @@ export class ProposteComponent implements OnInit {
   propose() {
     console.log(this.nome)
     console.log(this.descrizione)
-    console.log(this.jwtService.getTokenSub())
+    console.log(this.autore)
   }
 }
