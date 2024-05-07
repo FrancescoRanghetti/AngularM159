@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {GeneralService} from "../../service/General.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-proposte',
@@ -6,22 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./proposte.component.css']
 })
 export class ProposteComponent {
+  protected nome: string = '';
+  protected descrizione: string = '';
+  protected autore: string = '';
 
+  constructor(private generalService: GeneralService, private router: Router) {
+    //private.jwtService:JwtService
+  }
+
+  propose() {
+    console.log(this.nome)
+    console.log(this.descrizione)
+
+    //console.log(jwtService.getTokenSub())
+  }
 }
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  const form = document.getElementById('topicForm') as HTMLFormElement;
-
-  form.onsubmit = function(e) {
-    e.preventDefault();  // non so cosa faccia ma consigliano di metterlo
-
-    const topic = (document.getElementById('topic') as HTMLInputElement).value;
-    const description = (document.getElementById('description') as HTMLTextAreaElement).value;
-
-    console.log('Tema:', topic);
-    console.log('Descrizione:', description);
-
-    // non ho capito una sega di come si mette la roba nel server
-  };
-});
 

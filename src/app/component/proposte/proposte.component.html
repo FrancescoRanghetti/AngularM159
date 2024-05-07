@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-</head>
-<body>
-<form id="topicForm">
-  <label for="topic">tematica:</label>
-  <input type="text" id="topic" name="topic" placeholder="Inserisci il tema" required><br><br>
+<div class="containerProposte">
+  <h1 class="title">nome app</h1>
+  <form method="post">
+    <div class="name">
+      <label class="nomeLabel" *ngIf="!nome">
+        nome
+      </label>
+      <input class="nomeInput" type="text" [(ngModel)]="nome" name="nome"/>
+    </div>
 
-  <label for="description">Descrizione:</label>
-  <textarea id="description" name="description" placeholder="Descrivi l'argomento" rows="4" required></textarea><br><br>
+    <br/>
 
-  <button type="submit">Invia</button>
-</form>
+    <div class="descrizione">
+      <label class="passwordLabel" *ngIf="!descrizione">
+        descrizione</label>
+      <input type="text" class="passwordInput" [(ngModel)]="descrizione" name="descrizione"/>
+    </div>
 
-</body>
-</html>
+    <br/>
+    <a (click)="propose()"><input type="submit" class="btnSubmit"/></a>
 
+  </form>
+</div>
