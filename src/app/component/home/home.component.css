@@ -9,7 +9,7 @@
   width: 400px;
   color: white;
   position: relative;
-  top: 35vh;
+  top: 30vh;
   transition: 0.2s;
 }
 
@@ -26,5 +26,4 @@
   transition: 0.2s;
   background-color: white;
   color: #1C1D25;
-
 }

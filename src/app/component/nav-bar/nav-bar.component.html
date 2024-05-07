@@ -9,7 +9,7 @@
       <span class="card-side"></span>
     </label>
   </div>
-  <div class="out"><a *ngIf="!ifLogin" [routerLink]="['/login']" class="logout">🏃🏼</a>
+  <div class="out"><a *ngIf="!ifLogin" (click)="expiredJwt()" [routerLink]="['/login']" class="logout">🏃🏼</a>
   </div>
 </div>
 <div class="lineBottom"></div>
