@@ -16,8 +16,6 @@ const routes: Routes = [
   {path: 'votazioni/:id', component: VotazionePageComponent},
   {path: 'proposte', component: PropostePageComponent},
   {path: 'risultati', component: RisultatiPageComponent},
-
-
   {path: 'votazioni/:id', component: VotazionePageComponent},
   {path: 'votazioni-admin/:id', component: VotazioneAdminPageComponent}
 ]
