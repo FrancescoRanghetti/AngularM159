@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {JwtService} from "../../service/Jwt.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-proposte',
@@ -13,7 +15,7 @@ export class ProposteComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.jwtService.isValidToken(this.jwtService.getStringToken(), this.jwtService.getTokenSub(), this.jwtService.getTokenRole()).pipe().subscribe((isValid: boolean) => {
         if (isValid) {
           console.log("Token valid")
@@ -29,5 +31,6 @@ export class ProposteComponent implements OnInit {
   propose() {
     console.log(this.nome)
     console.log(this.descrizione)
+    console.log(this.jwtService.getTokenSub())
   }
 }

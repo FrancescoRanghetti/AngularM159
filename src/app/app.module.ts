@@ -22,6 +22,8 @@ import {PropostePageComponent} from './page/proposte-page/proposte-page.componen
 import {RisultatiPageComponent} from './page/risultati-page/risultati-page.component';
 import {FormsModule} from "@angular/forms";
 import {VotazioneAdminPageComponent} from "./page/admin/votazione-admin-page/votazione-admin-page.component";
+import { ProposteAdminComponent } from './component/proposte-admin/proposte-admin.component';
+import { ProposteAdminPageComponent } from './page/proposte-admin-page/proposte-admin-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {VotazioneAdminPageComponent} from "./page/admin/votazione-admin-page/vot
     ProposteComponent,
     RisultatiComponent,
     PropostePageComponent,
-    RisultatiPageComponent
+    RisultatiPageComponent,
+    ProposteAdminComponent,
+    ProposteAdminPageComponent
   ],
   imports: [
     BrowserModule,

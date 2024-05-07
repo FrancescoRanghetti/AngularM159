@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {VotazioniService} from "../../service/votazioni.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {JwtService} from "../../service/Jwt.service";
 
@@ -9,7 +8,7 @@ import {JwtService} from "../../service/Jwt.service";
   styleUrls: ['./risultati.component.css']
 })
 export class RisultatiComponent implements OnInit {
-  constructor(private votazioniService: VotazioniService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router) {
   }
 
   ngOnInit(): void {
