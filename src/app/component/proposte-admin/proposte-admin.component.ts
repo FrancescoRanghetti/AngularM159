@@ -2,14 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {JwtService} from "../../service/Jwt.service";
 import {Proposte} from "../../interfaces/Proposte";
-import {ProposteService} from "../../service/ProposteService";
+import {ProposteService} from "../../service/Proposte.service";
 
 @Component({
   selector: 'app-proposte-admin',
   templateUrl: './proposte-admin.component.html',
   styleUrls: ['./proposte-admin.component.css']
 })
-export class ProposteAdminComponent implements OnInit{
+export class ProposteAdminComponent implements OnInit {
 
   protected proposteArray: Proposte[] = [];
 

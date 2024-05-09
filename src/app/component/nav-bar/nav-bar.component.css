@@ -109,18 +109,6 @@
   transition: 5s;
 }
 
-/*.ifLoginTrue {*/
-/*  margin-right: 3%;*/
-/*}*/
-
-/*.ifLoginFalse {*/
-/*  margin-right: 8%;*/
-/*}*/
-
-/*.ifLoginOutTrue {*/
-/*  display: none;*/
-/*}*/
-
-/*.ifLoginOutFalse {*/
-/*  display: contents;*/
-/*}*/
+.backToHome {
+  cursor: pointer;
+}

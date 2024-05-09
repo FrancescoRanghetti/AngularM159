@@ -17,6 +17,8 @@ export class JwtService {
   }
 
   expiredJwt(token: string): Observable<string> {
+    token = this.getStringToken()
+    console.log("token ex: " + token)
     return this.http.get<string>(`http://localhost:3200/expiredJwt/${token}`)
   }
 

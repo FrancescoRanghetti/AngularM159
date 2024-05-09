@@ -28,6 +28,7 @@ export class NavBarComponent implements OnInit {
   public expiredJwt() {
     localStorage.clear()
     this.jwtService.expiredJwt(this.jwtService.getStringToken()).pipe().subscribe((newToken: string) => {
+      console.log("new token: " + newToken)
       localStorage.removeItem('STRING_TOKEN')
       this.jwtService.isValidToken(newToken, this.jwtService.getTokenSub(), this.jwtService.getTokenRole())
       // Todo implement method

@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
     this.jwtService.isValidToken(this.jwtService.getStringToken(), this.jwtService.getTokenSub(), this.jwtService.getTokenRole()).pipe().subscribe((isValid: boolean) => {
         if (isValid) {
           console.log("Token valid")
+        } else {
+          console.log("errore qua")
+
         }
       },
       (error) => {
@@ -22,6 +25,7 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/login']).then(r => {
           console.log("Redirect to login page because token is invalid")
         })
-      });
+      }
+    );
   }
 }

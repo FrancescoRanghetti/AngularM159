@@ -11,11 +11,12 @@ export class ProposteComponent implements OnInit {
   protected nome: string = '';
   protected descrizione: string = '';
   protected autore: string = this.jwtService.getTokenSub();
+
   constructor(private jwtService: JwtService, private router: Router) {
 
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.jwtService.isValidToken(this.jwtService.getStringToken(), this.jwtService.getTokenSub(), this.jwtService.getTokenRole()).pipe().subscribe((isValid: boolean) => {
         if (isValid) {
           console.log("Token valid")
@@ -28,6 +29,7 @@ export class ProposteComponent implements OnInit {
         })
       });
   }
+
   propose() {
     console.log(this.nome)
     console.log(this.descrizione)
