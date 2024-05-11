@@ -1,0 +1,22 @@
+<div class="containerProposte">
+  <form method="post">
+    <div class="name">
+      <label class="nomeLabel" *ngIf="!nome">
+        nome
+      </label>
+      <input class="nomeInput" type="text" [(ngModel)]="nome" name="nome"/>
+    </div>
+
+    <br/>
+
+    <div class="descrizione">
+      <label class="passwordLabel" *ngIf="!descrizione">
+        descrizione</label>
+      <input type="text" class="passwordInput" [(ngModel)]="descrizione" name="descrizione"/>
+    </div>
+
+    <br/>
+    <a (click)="addProposeAdmin()"><input type="submit" class="btnSubmit"/></a>
+
+  </form>
+</div>
