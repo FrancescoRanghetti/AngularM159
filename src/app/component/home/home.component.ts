@@ -8,6 +8,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  protected pathRole: string = '';
+
   constructor(protected jwtService: JwtService, private router: Router) {
   }
 
@@ -15,9 +17,6 @@ export class HomeComponent implements OnInit {
     this.jwtService.isValidToken(this.jwtService.getStringToken(), this.jwtService.getTokenSub(), this.jwtService.getTokenRole()).pipe().subscribe((isValid: boolean) => {
         if (isValid) {
           console.log("Token valid")
-        } else {
-          console.log("errore qua")
-
         }
       },
       (error) => {
@@ -27,5 +26,10 @@ export class HomeComponent implements OnInit {
         })
       }
     );
+    if (this.jwtService.getTokenRole() == 'User') {
+      this.pathRole = 'proposte'
+    } else {
+      this.pathRole = 'proposte-admin'
+    }
   }
 }

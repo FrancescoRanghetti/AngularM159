@@ -18,12 +18,7 @@
   <div class="autoreBody">
     <p class="autore">---Autore: {{votazione.autore}}---</p>
   </div>
-  <div class="terminaVotazione">
-    <div class="terminaOra">
-      <a [routerLink]="['/votazioni']" (click)="deleteNow()" class="terminaOra">Termina ora</a>
-    </div>
-    <div class="terminaIl">
-      <a class="terminaIl">Termina il ...</a>
-    </div>
+  <div class="terminaOra">
+    <a [routerLink]="['/votazioni']" (click)="deleteNow()">Termina ora</a>
   </div>
 </div>

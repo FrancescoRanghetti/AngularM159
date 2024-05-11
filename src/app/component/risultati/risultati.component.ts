@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {JwtService} from "../../service/Jwt.service";
+import {RisultatiService} from "../../service/Risultati.service";
+import {Risultati} from "../../interfaces/Risultati";
 
 @Component({
   selector: 'app-risultati',
@@ -8,7 +10,10 @@ import {JwtService} from "../../service/Jwt.service";
   styleUrls: ['./risultati.component.css']
 })
 export class RisultatiComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router) {
+  protected arrayRisultati: Risultati[] = [];
+  protected percentageValue: number = 20;
+
+  constructor(private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
 
   ngOnInit(): void {
@@ -23,5 +28,10 @@ export class RisultatiComponent implements OnInit {
           console.log("Redirect to login page because token is invalid")
         })
       });
+
+    this.risultatiService.getAllProposte().pipe().subscribe((risultati: Risultati[]) => {
+      console.log(risultati)
+      this.arrayRisultati = risultati;
+    })
   }
 }

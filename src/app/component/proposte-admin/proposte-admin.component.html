@@ -1,9 +1,16 @@
 <div class="containerVotazioni">
   <div *ngFor="let proposta of proposteArray" class="proposta">
-      <div class="nome">
-        {{proposta.nome}}
-      </div>
-      <div class="button"> <button type="button">accetta</button> </div>
-      <div class="button"><button type="button">rifiuta</button></div>
+    <div class="nome">
+      {{proposta.nome}}
+    </div>
+    <div class="button">
+      <a (click)="addPropose(proposta.id, proposta.nome, proposta.descrizione, proposta.autore)" type="button" class="accetta">accetta</a>
+    </div>
+    <div class="button">
+      <a (click)="deleteProposta(proposta.id, proposta.nome, proposta.descrizione, proposta.autore)" type="button" class="rifiuta">rifiuta</a>
+    </div>
+  </div>
+  <div class="addPropostaDiv">
+    <a class="addProposta" [routerLink]="['/add-proposta-admin']">Aggiungi una proposta</a>
   </div>
 </div>

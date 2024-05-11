@@ -38,6 +38,5 @@ export class VotazioniComponent implements OnInit {
     } else {
       this.pathRole = 'votazioni-admin'
     }
-
   }
 }

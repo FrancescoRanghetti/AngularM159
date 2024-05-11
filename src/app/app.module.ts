@@ -22,8 +22,10 @@ import {PropostePageComponent} from './page/proposte-page/proposte-page.componen
 import {RisultatiPageComponent} from './page/risultati-page/risultati-page.component';
 import {FormsModule} from "@angular/forms";
 import {VotazioneAdminPageComponent} from "./page/admin/votazione-admin-page/votazione-admin-page.component";
-import { ProposteAdminComponent } from './component/proposte-admin/proposte-admin.component';
-import { ProposteAdminPageComponent } from './page/proposte-admin-page/proposte-admin-page.component';
+import {ProposteAdminComponent} from './component/proposte-admin/proposte-admin.component';
+import {ProposteAdminPageComponent} from './page/admin/proposte-admin-page/proposte-admin-page.component';
+import {AddPropostaAdminComponent} from './component/add-proposta-admin/add-proposta-admin.component';
+import {AddPropostaAdminPageComponent} from './page/admin/add-proposta-admin-page/add-proposta-admin-page.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ProposteAdminPageComponent } from './page/proposte-admin-page/proposte-
     PropostePageComponent,
     RisultatiPageComponent,
     ProposteAdminComponent,
-    ProposteAdminPageComponent
+    ProposteAdminPageComponent,
+    AddPropostaAdminComponent,
+    AddPropostaAdminPageComponent
   ],
   imports: [
     BrowserModule,

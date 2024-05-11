@@ -8,7 +8,8 @@ import {VotazionePageComponent} from "./page/votazione-page/votazione-page.compo
 import {PropostePageComponent} from "./page/proposte-page/proposte-page.component";
 import {RisultatiPageComponent} from "./page/risultati-page/risultati-page.component";
 import {VotazioneAdminPageComponent} from "./page/admin/votazione-admin-page/votazione-admin-page.component";
-import {ProposteAdminPageComponent} from "./page/proposte-admin-page/proposte-admin-page.component";
+import {ProposteAdminPageComponent} from "./page/admin/proposte-admin-page/proposte-admin-page.component";
+import {AddPropostaAdminPageComponent} from "./page/admin/add-proposta-admin-page/add-proposta-admin-page.component";
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'risultati', component: RisultatiPageComponent},
   {path: 'votazioni/:id', component: VotazionePageComponent},
   {path: 'votazioni-admin/:id', component: VotazioneAdminPageComponent},
-  {path: 'proposte-admin', component: ProposteAdminPageComponent}
+  {path: 'proposte-admin', component: ProposteAdminPageComponent},
+  {path: 'add-proposta-admin', component: AddPropostaAdminPageComponent}
 ]
 
 @NgModule({

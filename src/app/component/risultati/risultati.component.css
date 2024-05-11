@@ -1,15 +1,55 @@
 table {
   width: 100%; /* Full width of the container */
   border-collapse: collapse; /* Ensures borders between cells are merged */
+  margin: 0 -200px;
 }
+
 td {
-  padding: 8px;  /*Padding around text and buttons */
+  padding: 8px; /*Padding around text and buttons */
   vertical-align: top; /* Aligns content to the top of the cell */
 }
+
+tr {
+  position: relative;
+  top: 50px;
+}
+
 .text-cell {
   width: 50%; /* Allocates 70% of the width to the text */
+  vertical-align: center;
 }
+
 .button-cell {
   width: 30%; /* Allocates 30% of the width to the button */
   text-align: left; /* Aligns the button to the right side of its cell */
+}
+
+.box {
+  /*position: relative;*/
+  /*right: 20%;*/
+  background-color: red;
+  height: 10px;
+  width: 100%;
+  /*border: 2px solid transparent;*/
+}
+
+.range {
+  height: 10px;
+  background-color: green;
+}
+
+.votiSi {
+  flex: 2;
+  margin: 0 0 0 15px;
+}
+
+.votiNo {
+  flex: 2;
+  text-align: right;
+  margin: 0 15px 0 0;
+}
+
+.bodyVoti {
+  display: flex;
+  flex-direction: row;
 }

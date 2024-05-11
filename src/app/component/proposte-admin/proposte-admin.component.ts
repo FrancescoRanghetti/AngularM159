@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {JwtService} from "../../service/Jwt.service";
 import {Proposte} from "../../interfaces/Proposte";
 import {ProposteService} from "../../service/Proposte.service";
+import {RisultatiService} from "../../service/Risultati.service";
 
 @Component({
   selector: 'app-proposte-admin',
@@ -13,7 +14,7 @@ export class ProposteAdminComponent implements OnInit {
 
   protected proposteArray: Proposte[] = [];
 
-  constructor(private proposteService: ProposteService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router) {
+  constructor(private proposteService: ProposteService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
 
   ngOnInit(): void {
@@ -32,5 +33,19 @@ export class ProposteAdminComponent implements OnInit {
           console.log("Redirect to login page because token is invalid")
         })
       });
+  }
+
+  addPropose(id: number, nome: string, descrizione: string, autore: string) {
+    if (nome != '' && descrizione != '') {
+      this.proposteService.addProposteAdmin(nome, descrizione, autore).pipe().subscribe();
+      this.proposteService.delelteProposta(id, nome, descrizione, autore).pipe().subscribe();
+      this.risultatiService.addRisultato(nome, descrizione, autore, 0, 0, null).pipe().subscribe();
+      this.ngOnInit()
+    }
+  }
+
+  deleteProposta(id: number, nome: string, descrizione: string, autore: string) {
+    this.proposteService.delelteProposta(id, nome, descrizione, autore).pipe().subscribe();
+    this.ngOnInit()
   }
 }

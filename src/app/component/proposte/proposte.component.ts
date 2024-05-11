@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {JwtService} from "../../service/Jwt.service";
 import {Router} from "@angular/router";
+import {ProposteService} from "../../service/Proposte.service";
 
 @Component({
   selector: 'app-proposte',
@@ -12,7 +13,7 @@ export class ProposteComponent implements OnInit {
   protected descrizione: string = '';
   protected autore: string = this.jwtService.getTokenSub();
 
-  constructor(private jwtService: JwtService, private router: Router) {
+  constructor(private jwtService: JwtService, private router: Router, private proposteService: ProposteService) {
 
   }
 
@@ -30,9 +31,9 @@ export class ProposteComponent implements OnInit {
       });
   }
 
-  propose() {
-    console.log(this.nome)
-    console.log(this.descrizione)
-    console.log(this.autore)
+  addPropose() {
+    if (this.nome != '' && this.descrizione != '') {
+      this.proposteService.addProposte(this.nome, this.descrizione, this.autore).pipe().subscribe();
+    }
   }
 }

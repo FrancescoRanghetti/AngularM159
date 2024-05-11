@@ -5,18 +5,21 @@ body {
   height: 100vh;
   margin: 0;
 }
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
+
 label {
   margin-bottom: 10px;
 }
+
 input, textarea {
-  width: 300px; /* Larghezza fissa per tutti gli input e textarea */
+  width: 300px;
   padding: 8px;
-  margin-bottom: 20px; /* Spazio tra gli elementi del form */
+  margin-bottom: 20px;
   border-radius: 4px;
 }

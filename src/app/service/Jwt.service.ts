@@ -23,8 +23,15 @@ export class JwtService {
   }
 
   getGecodedToken(): any {
-    return jwtDecode(this.getStringToken())
+    return (this.isTokenComplete(this.getStringToken())) ? jwtDecode(this.getStringToken()) : false;
+    // return jwtDecode(this.getStringToken())
   }
+
+  isTokenComplete(token: string): boolean {
+    const parts = token.split('.');
+    return parts.length === 3; // Un token JWT valido ha 3 parti: header, payload, firma
+  }
+
 
   getTokenSub(): string {
     return this.getGecodedToken().sub;

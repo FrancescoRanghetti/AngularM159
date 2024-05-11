@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Barre Colorate Dinamiche</title>
-</head>
-<body>
 <table>
-  <tr>
-    <td class="text-cell">proposta uno</td>
-    <td class="button-cell"><input type="range"></td>
-  </tr>
-  <tr>
-    <td class="text-cell">proposta due</td>
-    <td class="button-cell"><input type="range"></td>
-  </tr>
-  <tr>
-    <td class="text-cell">proposta tre</td>
-    <td class="button-cell"><input type="range"></td>
+  <tr *ngFor="let risultato of arrayRisultati">
+    <td class="text-cell">{{risultato.nome}}</td>
+    <td class="button-cell">
+      <div class="bodyVoti">
+        <p class="votiSi">{{risultato.si}}</p>
+        <p class="votiNo">{{risultato.no}}</p>
+      </div>
+      <div class="box">
+        <div class="range" [style.width.%]="(risultato.si / (risultato.si + risultato.no)) * 100"></div>
+      </div>
+      <br>
+      <br>
+      <br>
   </tr>
 </table>
-</body>
-</html>

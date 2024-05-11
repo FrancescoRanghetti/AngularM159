@@ -15,7 +15,55 @@
   padding-right: 5%;
 }
 
-.btnVota {
+.addPropostaDiv {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.accetta {
   border: 2px solid white;
   padding: 10px 50px;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.accetta:hover {
+  color: #1C1D25;
+  background-color: white;
+  padding: 15px 55px;
+  transition: 0.2s;
+}
+
+.rifiuta {
+  border: 2px solid white;
+  padding: 10px 50px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rifiuta:hover {
+  color: #1C1D25;
+  background-color: white;
+  padding: 15px 55px;
+  transition: 0.2s;
+}
+
+.addProposta {
+  border: 2px solid white;
+  padding: 10px 50px;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.addProposta:hover {
+  color: #1C1D25;
+  background-color: white;
+  padding: 15px 55px;
+  transition: 0.2s;
 }

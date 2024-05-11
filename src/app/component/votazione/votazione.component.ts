@@ -3,6 +3,8 @@ import {VotazioniService} from "../../service/votazioni.service";
 import {Votazioni} from "../../interfaces/votazioni";
 import {ActivatedRoute, Router} from "@angular/router";
 import {JwtService} from "../../service/Jwt.service";
+import {RisultatiService} from "../../service/Risultati.service";
+import {Risultati} from "../../interfaces/Risultati";
 
 @Component({
   selector: 'app-votazione',
@@ -11,10 +13,12 @@ import {JwtService} from "../../service/Jwt.service";
 })
 export class VotazioneComponent implements OnInit {
   protected votazioniArray: Votazioni[] = [];
+  // protected risultatiArray: Observable<Risultati[]> = [];
   protected votazioneId: number = 0;
   protected href: string = '';
+  protected hasVoted: boolean = false;
 
-  constructor(private votazioniService: VotazioniService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router) {
+  constructor(private votazioniService: VotazioniService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
 
   ngOnInit(): void {
@@ -61,5 +65,16 @@ export class VotazioneComponent implements OnInit {
       this.votazioniArray = [votazione];
       console.log(this.votazioniArray);
     });
+  }
+
+  vota(nome: string | undefined, descrizione: string | undefined, si: boolean) {
+    this.risultatiService.getAllProposte().pipe().subscribe((risultati: Risultati[]) => {
+      for (let i = 0; i < risultati.length; i++) {
+        if (risultati[i].nome == nome && risultati[i].descrizione == descrizione) {
+          this.hasVoted = true;
+          this.risultatiService.addVoto(risultati[i].id, si).pipe().subscribe();
+        }
+      }
+    })
   }
 }

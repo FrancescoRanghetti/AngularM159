@@ -20,10 +20,10 @@
   </div>
   <div class="btnVotiBody">
     <div class="si">
-      <a>Si</a>
+      <a (click)="(hasVoted) ? null : vota(votazione.nome, votazione.descrizione, true)">Si</a>
     </div>
     <div class="no">
-      <a>No</a>
+      <a (click)="(hasVoted) ? null : vota(votazione.nome, votazione.descrizione, false)" [attr.disabled]="hasVoted">No</a>
     </div>
   </div>
 </div>

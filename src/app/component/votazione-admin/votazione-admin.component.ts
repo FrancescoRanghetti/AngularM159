@@ -3,18 +3,22 @@ import {Votazioni} from "../../interfaces/votazioni";
 import {VotazioniService} from "../../service/votazioni.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {JwtService} from "../../service/Jwt.service";
+import {RisultatiService} from "../../service/Risultati.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-votazione-admin',
   templateUrl: './votazione-admin.component.html',
-  styleUrls: ['./votazione-admin.component.css']
+  styleUrls: ['./votazione-admin.component.css'],
+  providers: [DatePipe]
 })
 export class VotazioneAdminComponent implements OnInit {
   protected votazioniArray: Votazioni[] = [];
   protected votazioneId: number = 0;
   protected href: string = '';
+  protected dataCorrente: string = '';
 
-  constructor(private votazioniService: VotazioniService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router) {
+  constructor(private votazioniService: VotazioniService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
 
   ngOnInit(): void {
@@ -63,6 +67,6 @@ export class VotazioneAdminComponent implements OnInit {
   }
 
   deleteNow() {
-    this.votazioniService.deleteNow(this.votazioneId).pipe().subscribe()
+    this.votazioniService.deleteNow(this.votazioneId).pipe().subscribe();
   }
 }
