@@ -1,12 +1,12 @@
 table {
-  width: 100%; /* Full width of the container */
-  border-collapse: collapse; /* Ensures borders between cells are merged */
+  width: 100%;
+  border-collapse: collapse;
   margin: 0 -200px;
 }
 
 td {
-  padding: 8px; /*Padding around text and buttons */
-  vertical-align: top; /* Aligns content to the top of the cell */
+  padding: 8px;
+  vertical-align: top;
 }
 
 tr {
@@ -14,23 +14,27 @@ tr {
   top: 50px;
 }
 
+
+tr:last-child {
+  position: relative;
+  bottom: 140px;
+}
+
 .text-cell {
-  width: 50%; /* Allocates 70% of the width to the text */
+  width: 50%;
   vertical-align: center;
+  cursor: pointer;
 }
 
 .button-cell {
-  width: 30%; /* Allocates 30% of the width to the button */
-  text-align: left; /* Aligns the button to the right side of its cell */
+  width: 30%;
+  text-align: left;
 }
 
 .box {
-  /*position: relative;*/
-  /*right: 20%;*/
   background-color: red;
   height: 10px;
   width: 100%;
-  /*border: 2px solid transparent;*/
 }
 
 .range {
@@ -52,4 +56,26 @@ tr {
 .bodyVoti {
   display: flex;
   flex-direction: row;
+}
+
+.bottom {
+  height: 120px;
+}
+
+@media screen and (max-width: 1023px) {
+  table {
+    margin: 0 -100px;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  table {
+    margin: 0 -50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  table {
+    margin: 0 -20px;
+  }
 }

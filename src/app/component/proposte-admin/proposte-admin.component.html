@@ -1,7 +1,11 @@
 <div class="containerVotazioni">
   <div *ngFor="let proposta of proposteArray" class="proposta">
-    <div class="nome">
+    <div class="nome" (click)="toggleDetails(proposta, proposta.id)">
       {{proposta.nome}}
+      <div *ngIf="showDetails && id == proposta.id" class="dettagli">
+        <p>Descrizione: {{ proposta.descrizione }}</p>
+        <p>Autore: {{ proposta.autore }}</p>
+      </div>
     </div>
     <div class="button">
       <a (click)="addPropose(proposta.id, proposta.nome, proposta.descrizione, proposta.autore)" type="button" class="accetta">accetta</a>

@@ -38,5 +38,9 @@ export class VotazioniComponent implements OnInit {
     } else {
       this.pathRole = 'votazioni-admin'
     }
+    this.votazioniService.getAllVotazioni().pipe().subscribe((votazioni: Votazioni[]) => {
+      console.log(votazioni)
+      this.votazioniArray = votazioni;
+    })
   }
 }

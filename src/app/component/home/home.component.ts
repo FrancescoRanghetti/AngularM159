@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
   protected pathRole: string = '';
+  protected nomeUtente: string = '';
 
   constructor(protected jwtService: JwtService, private router: Router) {
   }
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
     this.jwtService.isValidToken(this.jwtService.getStringToken(), this.jwtService.getTokenSub(), this.jwtService.getTokenRole()).pipe().subscribe((isValid: boolean) => {
         if (isValid) {
           console.log("Token valid")
+          this.nomeUtente = this.jwtService.getTokenSub()
         }
       },
       (error) => {

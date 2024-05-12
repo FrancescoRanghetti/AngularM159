@@ -11,7 +11,8 @@ import {Risultati} from "../../interfaces/Risultati";
 })
 export class RisultatiComponent implements OnInit {
   protected arrayRisultati: Risultati[] = [];
-  protected percentageValue: number = 20;
+  protected showDetails: boolean = false;
+  protected id: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
@@ -33,5 +34,12 @@ export class RisultatiComponent implements OnInit {
       console.log(risultati)
       this.arrayRisultati = risultati;
     })
+  }
+
+  toggleDetails(risultato: Risultati, id: number): void {
+    if (risultato.id == id) {
+      this.id = id;
+      this.showDetails = !this.showDetails;
+    }
   }
 }

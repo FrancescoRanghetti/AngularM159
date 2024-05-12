@@ -13,6 +13,8 @@ import {RisultatiService} from "../../service/Risultati.service";
 export class ProposteAdminComponent implements OnInit {
 
   protected proposteArray: Proposte[] = [];
+  protected showDetails: boolean = false;
+  protected id: number = 0;
 
   constructor(private proposteService: ProposteService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
@@ -33,6 +35,10 @@ export class ProposteAdminComponent implements OnInit {
           console.log("Redirect to login page because token is invalid")
         })
       });
+    this.proposteService.getAllProposte().pipe().subscribe((proposte: Proposte[]) => {
+      console.log(proposte)
+      this.proposteArray = proposte;
+    })
   }
 
   addPropose(id: number, nome: string, descrizione: string, autore: string) {
@@ -47,5 +53,12 @@ export class ProposteAdminComponent implements OnInit {
   deleteProposta(id: number, nome: string, descrizione: string, autore: string) {
     this.proposteService.delelteProposta(id, nome, descrizione, autore).pipe().subscribe();
     this.ngOnInit()
+  }
+
+  toggleDetails(proposta: Proposte, id: number): void {
+    if (proposta.id == id) {
+      this.id = id;
+      this.showDetails = !this.showDetails;
+    }
   }
 }

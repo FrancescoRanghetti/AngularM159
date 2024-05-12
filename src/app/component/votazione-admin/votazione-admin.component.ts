@@ -21,7 +21,9 @@ export class VotazioneAdminComponent implements OnInit {
   constructor(private votazioniService: VotazioniService, private activatedRoute: ActivatedRoute, private jwtService: JwtService, private router: Router, private risultatiService: RisultatiService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit()
+    :
+    void {
     this.activatedRoute.params.subscribe(params => {
       this.votazioneId = +params['id'];
       this.getVotoById(this.votazioneId);
@@ -38,7 +40,8 @@ export class VotazioneAdminComponent implements OnInit {
         })
       });
 
-    if (this.jwtService.getTokenRole() == 'User') {
+    if (this.jwtService.getTokenRole() == 'User'
+    ) {
       this.href = this.router.url;
       console.log("href: " + this.href)
       if (this.href.includes('admin')) {
@@ -51,13 +54,16 @@ export class VotazioneAdminComponent implements OnInit {
       console.log("href: " + this.href)
       if (this.href.includes('votazioni/')) {
         this.router.navigate(['/']).then((r => {
-          console.log("ciao")
+
         }))
       }
     }
   }
 
-  getVotoById(id: number) {
+  getVotoById(id
+                :
+                number
+  ) {
     this.votazioniService.getVotazioneById(id).pipe().subscribe((votazione: Votazioni[]) => {
       console.log(votazione)
       // @ts-ignore
@@ -66,7 +72,13 @@ export class VotazioneAdminComponent implements OnInit {
     });
   }
 
+
   deleteNow() {
     this.votazioniService.deleteNow(this.votazioneId).pipe().subscribe();
+    this.router.navigate(['/votazioni']);
+    // this.votazioniService.deleteNow(this.votazioneId).subscribe(() => {
+    //   this.votazioniArray = this.votazioniArray.filter(votazione => votazione.id !== this.votazioneId);
+    //   this.router.navigate(['/votazioni']);
+    // });
   }
 }

@@ -1,6 +1,11 @@
 <table>
   <tr *ngFor="let risultato of arrayRisultati">
-    <td class="text-cell">{{risultato.nome}}</td>
+    <td class="text-cell" (click)="toggleDetails(risultato, risultato.id)">{{risultato.nome}}
+      <div *ngIf="showDetails && id == risultato.id" class="dettagli">
+        <p>Descrizione: {{ risultato.descrizione }}</p>
+        <p>Autore: {{ risultato.autore }}</p>
+      </div>
+    </td>
     <td class="button-cell">
       <div class="bodyVoti">
         <p class="votiSi">{{risultato.si}}</p>
@@ -14,3 +19,4 @@
       <br>
   </tr>
 </table>
+<div class="bottom"></div>

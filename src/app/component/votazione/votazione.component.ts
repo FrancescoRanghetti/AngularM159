@@ -73,6 +73,7 @@ export class VotazioneComponent implements OnInit {
         if (risultati[i].nome == nome && risultati[i].descrizione == descrizione) {
           this.hasVoted = true;
           this.risultatiService.addVoto(risultati[i].id, si).pipe().subscribe();
+          this.router.navigate(['/votazioni'])
         }
       }
     })

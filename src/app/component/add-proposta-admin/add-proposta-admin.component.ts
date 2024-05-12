@@ -36,7 +36,7 @@ export class AddPropostaAdminComponent implements OnInit {
     if (this.nome != '' && this.descrizione != '') {
       this.proposteService.addProposteAdmin(this.nome, this.descrizione, this.autore).pipe().subscribe();
       this.risultatiService.addRisultato(this.nome, this.descrizione, this.autore, 0, 0, null).pipe().subscribe();
-
+      this.router.navigate(['/proposte-admin'])
     }
   }
 }

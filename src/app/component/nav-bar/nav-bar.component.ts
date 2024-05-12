@@ -11,6 +11,7 @@ import {JwtService} from "../../service/Jwt.service";
 export class NavBarComponent implements OnInit {
   currentPage: string = '';
   ifLogin: boolean = false;
+  protected isDarkTheme: boolean = true;
   protected href: string = "";
 
 

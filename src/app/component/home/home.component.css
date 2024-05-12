@@ -2,6 +2,11 @@
   height: calc(100vh - 82px - 82px);
 }
 
+.nomeUtente {
+  position: relative;
+  top: 17vh;
+}
+
 .btnVote, .btnProponi, .btnRisultati {
   display: inline-block;
   border: 1px solid white;

@@ -1,22 +1,20 @@
 <div class="containerProposte">
   <form method="post">
     <div class="name">
-      <label class="nomeLabel" *ngIf="!nome">
-        nome
+      <label class="tematicaLabel">
+        Tematica
       </label>
-      <input class="nomeInput" type="text" [(ngModel)]="nome" name="nome"/>
+      <input class="tematicaInput" type="text" [(ngModel)]="nome" name="tematica"/>
     </div>
-
     <br/>
-
+    <br/>
     <div class="descrizione">
-      <label class="passwordLabel" *ngIf="!descrizione">
-        descrizione</label>
-      <input type="text" class="passwordInput" [(ngModel)]="descrizione" name="descrizione"/>
+      <label class="descrizioneLabel">
+        Descrizione</label>
+      <input type="text" class="descrizioneInput" [(ngModel)]="descrizione" name="descrizione"/>
     </div>
-
     <br/>
-    <a (click)="addProposeAdmin()"><input type="submit" class="btnSubmit"/></a>
-
+    <br/>
+    <a (click)="addProposeAdmin()" class="addPropostaAdmin">Aggiungi proposta</a>
   </form>
 </div>
