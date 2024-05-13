@@ -34,7 +34,7 @@ export class ProposteComponent implements OnInit {
   addPropose() {
     if (this.nome != '' && this.descrizione != '') {
       this.proposteService.addProposte(this.nome, this.descrizione, this.autore).pipe().subscribe();
-      this.router.navigate(['/'])
+      this.router.navigate([''])
     }
   }
 }

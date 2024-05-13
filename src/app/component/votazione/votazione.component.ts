@@ -13,7 +13,6 @@ import {Risultati} from "../../interfaces/Risultati";
 })
 export class VotazioneComponent implements OnInit {
   protected votazioniArray: Votazioni[] = [];
-  // protected risultatiArray: Observable<Risultati[]> = [];
   protected votazioneId: number = 0;
   protected href: string = '';
   protected hasVoted: boolean = false;
@@ -37,22 +36,17 @@ export class VotazioneComponent implements OnInit {
           console.log("Redirect to login page because token is invalid")
         })
       });
-    console.log("role: " + this.jwtService.getTokenRole())
 
     if (this.jwtService.getTokenRole() == 'User') {
       this.href = this.router.url;
-      console.log("href: " + this.href)
       if (this.href.includes('admin')) {
         this.router.navigate(['/']).then((r => {
-          console.log("ciao")
         }))
       }
     } else {
       this.href = this.router.url;
-      console.log("href: " + this.href)
       if (this.href.includes('votazioni/')) {
         this.router.navigate(['/']).then((r => {
-          console.log("ciao")
         }))
       }
     }
@@ -60,10 +54,8 @@ export class VotazioneComponent implements OnInit {
 
   getVotoById(id: number) {
     this.votazioniService.getVotazioneById(id).pipe().subscribe((votazione: Votazioni[]) => {
-      console.log(votazione)
       // @ts-ignore
       this.votazioniArray = [votazione];
-      console.log(this.votazioniArray);
     });
   }
 

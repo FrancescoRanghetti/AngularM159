@@ -1,22 +1,18 @@
 <div class="containerProposte">
   <form method="post">
     <div class="name">
-      <label class="nomeLabel" *ngIf="!nome">
+      <label class="nomeLabel">
         nome
       </label>
       <input class="nomeInput" type="text" [(ngModel)]="nome" name="nome"/>
     </div>
-
     <br/>
-
     <div class="descrizione">
-      <label class="passwordLabel" *ngIf="!descrizione">
+      <label class="passwordLabel">
         descrizione</label>
       <input type="text" class="passwordInput" [(ngModel)]="descrizione" name="descrizione"/>
     </div>
-
     <br/>
-    <a (click)="addPropose()"><input type="submit" class="btnSubmit"/></a>
-
+    <a (click)="addPropose()" class="addProposta">Richiedi approvazione</a>
   </form>
 </div>

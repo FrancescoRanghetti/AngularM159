@@ -16,17 +16,10 @@ export class LoginComponent {
   }
 
   checkLogin() {
-    // console.log(this.ldapService.sendLogin(this.username, this.password).pipe().subscribe((token: string) => {
-    //     this.token = token;
-    //     console.log("token: " + this.token.toString())
-    //   },
     if (this.username != '' && this.password != '') {
       console.log(this.ldapService.sendLogin(this.username, this.password).pipe().subscribe((token: string) => {
           this.token = token;
-          console.log("Token: " + this.token.toString())
           localStorage.setItem('STRING_TOKEN', this.token.toString())
-          // environment.STRING_TOKEN = this.token.toString();
-          // console.log("env: " + environment.STRING_TOKEN)
           this.router.navigate(['/']).then(r => {
             console.log("Login successful, redirect to home page")
           })
@@ -37,9 +30,5 @@ export class LoginComponent {
     } else {
       console.log("Both username and password are required")
     }
-  }
-
-  public getToken(): string {
-    return (this.token != '') ? this.token : 'Invalid token';
   }
 }

@@ -8,7 +8,6 @@ import {jwtDecode} from "jwt-decode";
 })
 export class JwtService {
 
-
   constructor(protected http: HttpClient) {
   }
 
@@ -18,20 +17,17 @@ export class JwtService {
 
   expiredJwt(token: string): Observable<string> {
     token = this.getStringToken()
-    console.log("token ex: " + token)
     return this.http.get<string>(`http://localhost:3200/expiredJwt/${token}`)
   }
 
   getGecodedToken(): any {
     return (this.isTokenComplete(this.getStringToken())) ? jwtDecode(this.getStringToken()) : false;
-    // return jwtDecode(this.getStringToken())
   }
 
   isTokenComplete(token: string): boolean {
     const parts = token.split('.');
-    return parts.length === 3; // Un token JWT valido ha 3 parti: header, payload, firma
+    return parts.length === 3;
   }
-
 
   getTokenSub(): string {
     return this.getGecodedToken().sub;

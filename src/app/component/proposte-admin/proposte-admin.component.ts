@@ -11,7 +11,6 @@ import {RisultatiService} from "../../service/Risultati.service";
   styleUrls: ['./proposte-admin.component.css']
 })
 export class ProposteAdminComponent implements OnInit {
-
   protected proposteArray: Proposte[] = [];
   protected showDetails: boolean = false;
   protected id: number = 0;

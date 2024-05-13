@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class VotazioniComponent implements OnInit {
   protected votazioniArray: Votazioni[] = [];
   protected pathRole: string = '';
+  protected stringButtonVota: string = '';
 
   constructor(private votazioniService: VotazioniService, private jwtService: JwtService, private router: Router) {
   }
@@ -35,8 +36,10 @@ export class VotazioniComponent implements OnInit {
 
     if (this.jwtService.getTokenRole() == 'User') {
       this.pathRole = 'votazioni'
+      this.stringButtonVota = 'Vota'
     } else {
       this.pathRole = 'votazioni-admin'
+      this.stringButtonVota = 'Gestisci votazione'
     }
     this.votazioniService.getAllVotazioni().pipe().subscribe((votazioni: Votazioni[]) => {
       console.log(votazioni)
